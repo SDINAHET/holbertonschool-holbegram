@@ -1,17 +1,204 @@
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+// class LoginScreen extends StatelessWidget {
+//   const LoginScreen({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return const Scaffold(
+//       body: Center(
+//         child: Text(
+//           'Login Screen ✅',
+//           style: TextStyle(fontSize: 24),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+import 'package:flutter/material.dart';
+import '../widgets/text_field.dart';
+
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
   @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final _emailCtrl = TextEditingController();
+  final _passCtrl = TextEditingController();
+  bool _obscure = true;
+
+  @override
+  void dispose() {
+    _emailCtrl.dispose();
+    _passCtrl.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text(
-          'Login Screen ✅',
-          style: TextStyle(fontSize: 24),
+    const red = Color(0xFFD94335);
+
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Center(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(horizontal: 22),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 420),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const SizedBox(height: 26),
+
+                  // Titre style Instagram
+                  const Text(
+                    'Holbegram',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Billabong',
+                      fontSize: 56,
+                      height: 1,
+                      color: Colors.black,
+                    ),
+                  ),
+
+                  const SizedBox(height: 6),
+
+                  Center(
+                    child: Image.asset(
+                      'assets/images/seahorse.png',
+                      height: 44,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+
+                  const SizedBox(height: 22),
+
+                  CustomTextField(
+                    hintText: 'Email',
+                    controller: _emailCtrl,
+                    keyboardType: TextInputType.emailAddress,
+                  ),
+                  const SizedBox(height: 12),
+
+                  CustomTextField(
+                    hintText: 'Password',
+                    controller: _passCtrl,
+                    isPassword: true,
+                    obscureText: _obscure,
+                    onToggleObscure: () => setState(() => _obscure = !_obscure),
+                  ),
+
+                  const SizedBox(height: 18),
+
+                  SizedBox(
+                    height: 48,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: red,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        elevation: 2,
+                      ),
+                      onPressed: () {},
+                      child: const Text(
+                        'Log in',
+                        style: TextStyle(fontSize: 16, color: Colors.white),
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 14),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text('Forgot your login details? '),
+                      GestureDetector(
+                        onTap: () {},
+                        child: const Text(
+                          'Get help logging in',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  const SizedBox(height: 14),
+                  const Divider(height: 1),
+                  const SizedBox(height: 14),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text("Don't have an account  "),
+                      GestureDetector(
+                        onTap: () {},
+                        child: const Text(
+                          'Sign up',
+                          style: TextStyle(
+                            color: red,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  const SizedBox(height: 18),
+
+                  Row(
+                    children: const [
+                      Expanded(child: Divider()),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        child: Text('OR'),
+                      ),
+                      Expanded(child: Divider()),
+                    ],
+                  ),
+
+                  const SizedBox(height: 16),
+
+                  TextButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      foregroundColor: Colors.black,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          'assets/images/google_g.png',
+                          height: 20,
+                          width: 20,
+                        ),
+                        const SizedBox(width: 10),
+                        const Text(
+                          'Sign in with Google',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  const SizedBox(height: 10),
+                ],
+              ),
+            ),
+          ),
         ),
       ),
     );
   }
 }
+

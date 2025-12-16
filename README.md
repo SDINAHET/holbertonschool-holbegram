@@ -244,3 +244,135 @@ A Dart VM Service on Chrome is available at: http://127.0.0.1:53043/EP2aaKEcZIE=
 The Flutter DevTools debugger and profiler on Chrome is available at:
 http://127.0.0.1:53043/EP2aaKEcZIE=/devtools/?uri=ws://127.0.0.1:53043/EP2aaKEcZIE=/ws
 Starting application from main method in: org-dartlang-app:/web_entrypoint.dart.
+
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+
+
+```bash
+flutter run -d chrome
+flutter run -d windows
+
+flutter build windows
+flutter build web
+```
+
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram> flutter run -d chrome
+Launching lib\main.dart on Chrome in debug mode...
+Waiting for connection from debug service on Chrome...             29,2s
+
+Flutter run key commands.
+r Hot reload.
+R Hot restart.
+h List all available interactive commands.
+d Detach (terminate "flutter run" but leave application running).
+c Clear the screen
+q Quit (terminate the application on the device).
+
+This app is linked to the debug service: ws://127.0.0.1:52841/o7qsBd5OVoo=/ws
+Debug service listening on ws://127.0.0.1:52841/o7qsBd5OVoo=/ws
+A Dart VM Service on Chrome is available at: http://127.0.0.1:52841/o7qsBd5OVoo=
+The Flutter DevTools debugger and profiler on Chrome is available at:
+http://127.0.0.1:52841/o7qsBd5OVoo=/devtools/?uri=ws://127.0.0.1:52841/o7qsBd5OVoo=/ws
+Starting application from main method in: org-dartlang-app:/web_entrypoint.dart.
+Application finished.
+Terminer le programme de commandes (O/N) ? o
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram> flutter run -d windows
+Launching lib\main.dart on Windows in debug mode...
+CMake Deprecation Warning at D:/Users/steph/Documents/dev/holbertonschool-holbegram/build/windows/x64/extracted/firebase_cpp_sdk_windows/CMakeLists.txt:17 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+Building Windows application...                                    12,7s
+√ Built build\windows\x64\runner\Debug\holbegram.exe
+Syncing files to device Windows...                                 106ms
+
+Flutter run key commands.
+r Hot reload.
+R Hot restart.
+h List all available interactive commands.
+d Detach (terminate "flutter run" but leave application running).
+c Clear the screen
+q Quit (terminate the application on the device).
+
+A Dart VM Service on Windows is available at: http://127.0.0.1:50308/U6NRiKJkmGQ=/
+The Flutter DevTools debugger and profiler on Windows is available at:
+http://127.0.0.1:50308/U6NRiKJkmGQ=/devtools/?uri=ws://127.0.0.1:50308/U6NRiKJkmGQ=/ws
+
+
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram> flutter pub add firebase_core
+"firebase_core" is already in "dependencies". Will try to update the constraint.
+Resolving dependencies...
+Downloading packages...
+  _flutterfire_internals 1.3.59 (1.3.65 available)
+  characters 1.4.0 (1.4.1 available)
+  firebase_auth 5.7.0 (6.1.3 available)
+  firebase_auth_platform_interface 7.7.3 (8.1.5 available)
+  firebase_auth_web 5.15.3 (6.1.1 available)
+  firebase_core 3.15.2 (4.3.0 available)
+  firebase_core_web 2.24.1 (3.3.1 available)
+  firebase_database 11.3.10 (12.1.1 available)
+  firebase_database_platform_interface 0.2.6+10 (0.3.0+1 available)
+  firebase_database_web 0.2.6+16 (0.2.7+2 available)
+  flutter_lints 5.0.0 (6.0.0 available)
+  lints 5.1.1 (6.0.0 available)
+  matcher 0.12.17 (0.12.18 available)
+  material_color_utilities 0.11.1 (0.13.0 available)
+  test_api 0.7.7 (0.7.8 available)
+Got dependencies!
+15 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram>
+
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram> flutter pub add firebase_core
+"firebase_core" is already in "dependencies". Will try to update the constraint.
+Resolving dependencies...
+Downloading packages...
+  _flutterfire_internals 1.3.59 (1.3.65 available)
+  characters 1.4.0 (1.4.1 available)
+  firebase_auth 5.7.0 (6.1.3 available)
+  firebase_auth_platform_interface 7.7.3 (8.1.5 available)
+  firebase_auth_web 5.15.3 (6.1.1 available)
+  firebase_core 3.15.2 (4.3.0 available)
+  firebase_core_web 2.24.1 (3.3.1 available)
+  firebase_database 11.3.10 (12.1.1 available)
+  firebase_database_platform_interface 0.2.6+10 (0.3.0+1 available)
+  firebase_database_web 0.2.6+16 (0.2.7+2 available)
+  flutter_lints 5.0.0 (6.0.0 available)
+  lints 5.1.1 (6.0.0 available)
+  matcher 0.12.17 (0.12.18 available)
+  material_color_utilities 0.11.1 (0.13.0 available)
+  test_api 0.7.7 (0.7.8 available)
+Got dependencies!
+15 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram> flutter pub get
+Resolving dependencies... (1.2s)
+Downloading packages...
+  _flutterfire_internals 1.3.59 (1.3.65 available)
+  characters 1.4.0 (1.4.1 available)
+  firebase_auth 5.7.0 (6.1.3 available)
+  firebase_auth_platform_interface 7.7.3 (8.1.5 available)
+  firebase_auth_web 5.15.3 (6.1.1 available)
+  firebase_core 3.15.2 (4.3.0 available)
+  firebase_core_web 2.24.1 (3.3.1 available)
+  firebase_database 11.3.10 (12.1.1 available)
+  firebase_database_platform_interface 0.2.6+10 (0.3.0+1 available)
+  firebase_database_web 0.2.6+16 (0.2.7+2 available)
+  flutter_lints 5.0.0 (6.0.0 available)
+  lints 5.1.1 (6.0.0 available)
+  matcher 0.12.17 (0.12.18 available)
+  material_color_utilities 0.11.1 (0.13.0 available)
+  test_api 0.7.7 (0.7.8 available)
+Got dependencies!
+15 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram>
+
+

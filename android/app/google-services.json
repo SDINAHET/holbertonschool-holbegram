@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "944305260432",
+    "project_id": "holbegram-e67ca",
+    "storage_bucket": "holbegram-e67ca.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944305260432:android:ef5b062a729aa248855515",
+        "android_client_info": {
+          "package_name": "com.example.holbegram"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIiknbedI-f11UNZDBq3PpBXF3UdMMEaA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
