@@ -18,6 +18,8 @@
 
 import 'package:flutter/material.dart';
 import '../widgets/text_field.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -166,30 +168,50 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   const SizedBox(height: 16),
 
+                  // TextButton(
+                  //   onPressed: () {},
+                  //   style: TextButton.styleFrom(
+                  //     foregroundColor: Colors.black,
+                  //   ),
+                  //   child: Row(
+                  //     mainAxisAlignment: MainAxisAlignment.center,
+                  //     children: [
+                  //       Image.asset(
+                  //         'assets/images/google_g.png',
+                  //         height: 20,
+                  //         width: 20,
+                  //       ),
+                  //       const SizedBox(width: 10),
+                  //       const Text(
+                  //         'Sign in with Google',
+                  //         style: TextStyle(
+                  //           fontSize: 16,
+                  //           color: Colors.black,
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
                   TextButton(
                     onPressed: () {},
-                    style: TextButton.styleFrom(
-                      foregroundColor: Colors.black,
-                    ),
+                    style: TextButton.styleFrom(foregroundColor: Colors.black),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          'assets/images/google_g.png',
-                          height: 20,
-                          width: 20,
+                        SvgPicture.asset(
+                          'assets/icons/google.svg',
+                          width: 40,
+                          height: 40,
                         ),
                         const SizedBox(width: 10),
                         const Text(
                           'Sign in with Google',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.black,
-                          ),
+                          style: TextStyle(fontSize: 16, color: Colors.black),
                         ),
                       ],
                     ),
                   ),
+
 
                   const SizedBox(height: 10),
                 ],
