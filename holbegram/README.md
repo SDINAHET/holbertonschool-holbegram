@@ -413,3 +413,39 @@ flutter pub get
 flutter run
 
 ![alt text](image-3.png)
+
+flutter pub add device_preview
+
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram> flutter pub add device_preview
+Resolving dependencies...
+Downloading packages...
+  _flutterfire_internals 1.3.59 (1.3.65 available)
+  characters 1.4.0 (1.4.1 available)
++ device_frame 1.4.0
++ device_preview 1.3.1
+  firebase_auth 5.7.0 (6.1.3 available)
+  firebase_auth_platform_interface 7.7.3 (8.1.5 available)
+  firebase_auth_web 5.15.3 (6.1.1 available)
+  firebase_core 3.15.2 (4.3.0 available)
+  firebase_core_web 2.24.1 (3.3.1 available)
+  firebase_database 11.3.10 (12.1.1 available)
+  firebase_database_platform_interface 0.2.6+10 (0.3.0+1 available)
+  firebase_database_web 0.2.6+16 (0.2.7+2 available)
+  flutter_lints 5.0.0 (6.0.0 available)
++ flutter_localizations 0.0.0 from sdk flutter
++ freezed_annotation 3.1.0
++ intl 0.20.2
++ json_annotation 4.9.0
+  lints 5.1.1 (6.0.0 available)
+  matcher 0.12.17 (0.12.18 available)
+  material_color_utilities 0.11.1 (0.13.0 available)
++ nested 1.0.0
++ provider 6.1.5+1
+  test_api 0.7.7 (0.7.8 available)
+Changed 8 dependencies!
+15 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram>
+
+
+![alt text](image-4.png)

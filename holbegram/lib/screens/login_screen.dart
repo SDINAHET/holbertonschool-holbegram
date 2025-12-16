@@ -19,6 +19,8 @@
 import 'package:flutter/material.dart';
 import '../widgets/text_field.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'signup_screen.dart';
+
 
 
 class LoginScreen extends StatefulWidget {
@@ -136,22 +138,60 @@ class _LoginScreenState extends State<LoginScreen> {
                   const Divider(height: 1),
                   const SizedBox(height: 14),
 
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                  //     const Text("Don't have an account  "),
+                  //     GestureDetector(
+                  //       onTap: () {},
+                  //       child: const Text(
+                  //         'Sign up',
+                  //         style: TextStyle(
+                  //           color: red,
+                  //           fontWeight: FontWeight.bold,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
+                  Wrap(
+                    alignment: WrapAlignment.center,
+                    crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
-                      const Text("Don't have an account  "),
-                      GestureDetector(
-                        onTap: () {},
-                        child: const Text(
-                          'Sign up',
-                          style: TextStyle(
-                            color: red,
-                            fontWeight: FontWeight.bold,
-                          ),
+                      const Text("Don't have an account "),
+                      // GestureDetector(
+                      //   onTap: () {
+                      //     Navigator.push(
+                      //       context,
+                      //       MaterialPageRoute(
+                      //         builder: (context) => const SignupScreen(),
+                      //       ),
+                      //     );
+                      //   },
+                      //   child: const Text(
+                      //     'Sign up',
+                      //     style: TextStyle(
+                      //       color: red,
+                      //       fontWeight: FontWeight.bold,
+                      //     ),
+                      //   ),
+                      // ),
+                      _HoverLink(
+                        text: 'Sign up',
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (_) => const SignupScreen()),
+                          );
+                        },
+                        style: const TextStyle(
+                          color: red,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
                   ),
+
 
                   const SizedBox(height: 18),
 
@@ -223,4 +263,50 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
+
+class _HoverLink extends StatefulWidget {
+  final String text;
+  final VoidCallback onTap;
+  final TextStyle style;
+  final TextStyle? hoverStyle;
+
+  const _HoverLink({
+    required this.text,
+    required this.onTap,
+    required this.style,
+    this.hoverStyle,
+  });
+
+  @override
+  State<_HoverLink> createState() => _HoverLinkState();
+}
+
+class _HoverLinkState extends State<_HoverLink> {
+  bool _hover = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final base = widget.style;
+    final hover = widget.hoverStyle ??
+        base.copyWith(decoration: TextDecoration.underline);
+
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      onEnter: (_) => setState(() => _hover = true),
+      onExit: (_) => setState(() => _hover = false),
+      child: InkWell(
+        onTap: widget.onTap,
+        splashColor: Colors.transparent,
+        hoverColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        child: Text(
+          widget.text,
+          style: _hover ? hover : base,
+        ),
+      ),
+    );
+  }
+}
+
+
 
