@@ -1326,6 +1326,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/text_field.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'signup_screen.dart';
 
 
 class LoginScreen extends StatefulWidget {
@@ -1339,7 +1340,7 @@ class LoginScreen extends StatefulWidget {
     super.key,
     required this.emailController,
     required this.passwordController,
-    bool passwordVisible = true,
+    bool passwordVisible = false,
   }) : _passwordVisible = passwordVisible;
 
   @override
@@ -1472,10 +1473,32 @@ class _LoginScreenState extends State<LoginScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text("Don't have an account "),
+                        // TextButton(
+                        //   // onPressed: () {},
+                        //   onPressed: () {
+                        //     Navigator.pushNamed(context, '/signup');
+                        //   },
+                        //   child: const Text(
+                        //     'Sign up',
+                        //     style: TextStyle(
+                        //       fontWeight: FontWeight.bold,
+                        //       color: red,
+                        //     ),
+                        //   ),
+                        // ),
                         TextButton(
-                          // onPressed: () {},
                           onPressed: () {
-                            Navigator.pushNamed(context, '/signup');
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SignUp(
+                                  emailController: TextEditingController(),
+                                  usernameController: TextEditingController(),
+                                  passwordController: TextEditingController(),
+                                  passwordConfirmController: TextEditingController(),
+                                ),
+                              ),
+                            );
                           },
                           child: const Text(
                             'Sign up',

@@ -655,6 +655,7 @@
 
 import 'package:flutter/material.dart';
 import '../widgets/text_field.dart';
+import 'login_screen.dart';
 
 class SignUp extends StatefulWidget {
   final TextEditingController emailController;
@@ -670,7 +671,7 @@ class SignUp extends StatefulWidget {
     required this.usernameController,
     required this.passwordController,
     required this.passwordConfirmController,
-    bool passwordVisible = true,
+    bool passwordVisible = false,
   }) : _passwordVisible = passwordVisible;
 
   @override
@@ -679,11 +680,13 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   late bool _passwordVisible;
+  late bool _confirmPasswordVisible;
 
   @override
   void initState() {
     super.initState();
     _passwordVisible = widget._passwordVisible;
+    _confirmPasswordVisible = widget._passwordVisible;
   }
 
   @override
@@ -777,18 +780,19 @@ class _SignUpState extends State<SignUp> {
 
                   TextFieldInput(
                     controller: widget.passwordConfirmController,
-                    ispassword: !_passwordVisible,
+                    // ispassword: !_passwordVisible,
+                    ispassword: !_confirmPasswordVisible,
                     hintText: 'Confirm Password',
                     keyboardType: TextInputType.visiblePassword,
                     suffixIcon: IconButton(
                       alignment: Alignment.bottomLeft,
                       onPressed: () {
-                        setState(() => _passwordVisible = !_passwordVisible);
+                        // setState(() => _passwordVisible = !_passwordVisible);
+                        setState(() => _confirmPasswordVisible = !_confirmPasswordVisible);
                       },
                       icon: Icon(
-                        _passwordVisible
-                            ? Icons.visibility
-                            : Icons.visibility_off,
+                        // _passwordVisible ? Icons.visibility : Icons.visibility_off,
+                        _confirmPasswordVisible ? Icons.visibility : Icons.visibility_off,
                         color: red,
                       ),
                     ),
@@ -824,13 +828,33 @@ class _SignUpState extends State<SignUp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text('Have an account? '),
+                  // TextButton(
+                  //   onPressed: () {
+                  //     // si tu viens du login -> pop()
+                  //     // Navigator.pop(context);
+
+                  //     // alternative si tu utilises les routes:
+                  //     Navigator.pushNamed(context, '/login');
+                  //   },
+                  //   child: const Text(
+                  //     'Log in',
+                  //     style: TextStyle(
+                  //       fontWeight: FontWeight.bold,
+                  //       color: red,
+                  //     ),
+                  //   ),
+                  // ),
                   TextButton(
                     onPressed: () {
-                      // si tu viens du login -> pop()
-                      // Navigator.pop(context);
-
-                      // alternative si tu utilises les routes:
-                      Navigator.pushNamed(context, '/login');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginScreen(
+                            emailController: TextEditingController(),
+                            passwordController: TextEditingController(),
+                          ),
+                        ),
+                      );
                     },
                     child: const Text(
                       'Log in',
