@@ -198,7 +198,13 @@ class _MyAppState extends State<MyApp> {
           emailController: TextEditingController(),
           passwordController: TextEditingController(),
         ),
-        '/signup': (_) => const SignupScreen(),
+        // '/signup': (_) => const SignupScreen(),
+        '/signup': (_) => SignUp(
+          emailController: TextEditingController(),
+          usernameController: TextEditingController(),
+          passwordController: TextEditingController(),
+          passwordConfirmController: TextEditingController(),
+        ),
         '/upload': (_) => const UploadImageScreen(),
       },
     );

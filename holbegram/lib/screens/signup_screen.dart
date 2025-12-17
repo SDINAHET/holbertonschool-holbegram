@@ -453,201 +453,398 @@
 //   }
 // }
 
+// import 'package:flutter/material.dart';
+// import '../widgets/text_field.dart';
+
+// class SignupScreen extends StatefulWidget {
+//   const SignupScreen({super.key});
+
+//   @override
+//   State<SignupScreen> createState() => _SignupScreenState();
+// }
+
+// class _SignupScreenState extends State<SignupScreen> {
+//   final _emailCtrl = TextEditingController();
+//   final _nameCtrl = TextEditingController();
+//   final _passCtrl = TextEditingController();
+//   final _confirmCtrl = TextEditingController();
+
+//   @override
+//   void dispose() {
+//     _emailCtrl.dispose();
+//     _nameCtrl.dispose();
+//     _passCtrl.dispose();
+//     _confirmCtrl.dispose();
+//     super.dispose();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     const red = Color(0xFFD94335);
+
+//     return Scaffold(
+//       backgroundColor: Colors.white,
+//       body: SafeArea(
+//         child: Center(
+//           child: SingleChildScrollView(
+//             padding: const EdgeInsets.symmetric(horizontal: 22),
+//             child: ConstrainedBox(
+//               constraints: const BoxConstraints(maxWidth: 420),
+//               child: Column(
+//                 crossAxisAlignment: CrossAxisAlignment.stretch,
+//                 children: [
+//                   const SizedBox(height: 26),
+
+//                   const Text(
+//                     'Holbegram',
+//                     textAlign: TextAlign.center,
+//                     style: TextStyle(
+//                       fontFamily: 'Billabong',
+//                       fontSize: 56,
+//                       height: 1,
+//                       color: Colors.black,
+//                     ),
+//                   ),
+
+//                   const SizedBox(height: 6),
+
+//                   Center(
+//                     child: Image.asset(
+//                       'assets/images/seahorse.png',
+//                       height: 44,
+//                       fit: BoxFit.contain,
+//                     ),
+//                   ),
+
+//                   const SizedBox(height: 18),
+
+//                   const Text(
+//                     'Sign up to see photos and videos\nfrom your friends.',
+//                     textAlign: TextAlign.center,
+//                     style: TextStyle(fontSize: 15, color: Colors.black54),
+//                   ),
+
+//                   const SizedBox(height: 22),
+
+//                   TextFieldInput(
+//                     hintText: 'Email',
+//                     controller: _emailCtrl,
+//                     ispassword: false,
+//                     keyboardType: TextInputType.emailAddress,
+//                     suffixIcon: null,
+//                   ),
+//                   const SizedBox(height: 12),
+
+//                   TextFieldInput(
+//                     hintText: 'Full Name',
+//                     controller: _nameCtrl,
+//                     ispassword: false,
+//                     keyboardType: TextInputType.text,
+//                     suffixIcon: null,
+//                   ),
+//                   const SizedBox(height: 12),
+
+//                   TextFieldInput(
+//                     hintText: 'Password',
+//                     controller: _passCtrl,
+//                     ispassword: true,
+//                     keyboardType: TextInputType.visiblePassword,
+//                     suffixIcon: null,
+//                   ),
+//                   const SizedBox(height: 12),
+
+//                   TextFieldInput(
+//                     hintText: 'Confirm Password',
+//                     controller: _confirmCtrl,
+//                     ispassword: true,
+//                     keyboardType: TextInputType.visiblePassword,
+//                     suffixIcon: null,
+//                   ),
+
+//                   const SizedBox(height: 18),
+
+//                   SizedBox(
+//                     height: 48,
+//                     child: ElevatedButton(
+//                       style: ElevatedButton.styleFrom(
+//                         backgroundColor: red,
+//                         shape: RoundedRectangleBorder(
+//                           borderRadius: BorderRadius.circular(4),
+//                         ),
+//                         elevation: 2,
+//                       ),
+//                       onPressed: () {},
+//                       child: const Text(
+//                         'Sign up',
+//                         style: TextStyle(fontSize: 16, color: Colors.white),
+//                       ),
+//                     ),
+//                   ),
+
+//                   const SizedBox(height: 18),
+//                   const Divider(height: 1),
+//                   const SizedBox(height: 18),
+
+//                   Wrap(
+//                     alignment: WrapAlignment.center,
+//                     crossAxisAlignment: WrapCrossAlignment.center,
+//                     children: [
+//                       const Text('Have an account '),
+//                       _HoverLink(
+//                         text: 'Log in',
+//                         onTap: () => Navigator.pop(context),
+//                         style: const TextStyle(
+//                           color: red,
+//                           fontWeight: FontWeight.bold,
+//                         ),
+//                       ),
+//                     ],
+//                   ),
+
+//                   const SizedBox(height: 10),
+//                 ],
+//               ),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class _HoverLink extends StatefulWidget {
+//   final String text;
+//   final VoidCallback onTap;
+//   final TextStyle style;
+//   final TextStyle? hoverStyle;
+
+//   const _HoverLink({
+//     required this.text,
+//     required this.onTap,
+//     required this.style,
+//     this.hoverStyle,
+//   });
+
+//   @override
+//   State<_HoverLink> createState() => _HoverLinkState();
+// }
+
+// class _HoverLinkState extends State<_HoverLink> {
+//   bool _hover = false;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     final base = widget.style;
+//     final hover =
+//         widget.hoverStyle ?? base.copyWith(decoration: TextDecoration.underline);
+
+//     return MouseRegion(
+//       cursor: SystemMouseCursors.click,
+//       onEnter: (_) => setState(() => _hover = true),
+//       onExit: (_) => setState(() => _hover = false),
+//       child: InkWell(
+//         onTap: widget.onTap,
+//         splashColor: Colors.transparent,
+//         hoverColor: Colors.transparent,
+//         highlightColor: Colors.transparent,
+//         child: Text(widget.text, style: _hover ? hover : base),
+//       ),
+//     );
+//   }
+// }
+
 import 'package:flutter/material.dart';
 import '../widgets/text_field.dart';
 
-class SignupScreen extends StatefulWidget {
-  const SignupScreen({super.key});
+class SignUp extends StatefulWidget {
+  final TextEditingController emailController;
+  final TextEditingController usernameController;
+  final TextEditingController passwordController;
+  final TextEditingController passwordConfirmController;
+
+  final bool _passwordVisible;
+
+  SignUp({
+    super.key,
+    required this.emailController,
+    required this.usernameController,
+    required this.passwordController,
+    required this.passwordConfirmController,
+    bool passwordVisible = true,
+  }) : _passwordVisible = passwordVisible;
 
   @override
-  State<SignupScreen> createState() => _SignupScreenState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _SignupScreenState extends State<SignupScreen> {
-  final _emailCtrl = TextEditingController();
-  final _nameCtrl = TextEditingController();
-  final _passCtrl = TextEditingController();
-  final _confirmCtrl = TextEditingController();
+class _SignUpState extends State<SignUp> {
+  late bool _passwordVisible;
+
+  @override
+  void initState() {
+    super.initState();
+    _passwordVisible = widget._passwordVisible;
+  }
 
   @override
   void dispose() {
-    _emailCtrl.dispose();
-    _nameCtrl.dispose();
-    _passCtrl.dispose();
-    _confirmCtrl.dispose();
+    widget.emailController.dispose();
+    widget.usernameController.dispose();
+    widget.passwordController.dispose();
+    widget.passwordConfirmController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    const red = Color(0xFFD94335);
+    const red = Color.fromARGB(218, 226, 37, 24);
 
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Center(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(horizontal: 22),
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 420),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(height: 28),
+
+            const Text(
+              'Holbegram',
+              style: TextStyle(
+                fontFamily: 'Billabong',
+                fontSize: 50,
+              ),
+            ),
+
+            Image.asset(
+              'assets/images/seahorse.png',
+              width: 80,
+              height: 60,
+            ),
+
+            const SizedBox(height: 14),
+
+            const Text(
+              'Sign up to see photos and videos\nfrom your friends.',
+              textAlign: TextAlign.center,
+            ),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const SizedBox(height: 26),
-
-                  const Text(
-                    'Holbegram',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Billabong',
-                      fontSize: 56,
-                      height: 1,
-                      color: Colors.black,
-                    ),
-                  ),
-
-                  const SizedBox(height: 6),
-
-                  Center(
-                    child: Image.asset(
-                      'assets/images/seahorse.png',
-                      height: 44,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-
-                  const SizedBox(height: 18),
-
-                  const Text(
-                    'Sign up to see photos and videos\nfrom your friends.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 15, color: Colors.black54),
-                  ),
-
-                  const SizedBox(height: 22),
+                  const SizedBox(height: 28),
 
                   TextFieldInput(
-                    hintText: 'Email',
-                    controller: _emailCtrl,
+                    controller: widget.emailController,
                     ispassword: false,
+                    hintText: 'Email',
                     keyboardType: TextInputType.emailAddress,
                     suffixIcon: null,
                   ),
-                  const SizedBox(height: 12),
+
+                  const SizedBox(height: 24),
 
                   TextFieldInput(
-                    hintText: 'Full Name',
-                    controller: _nameCtrl,
+                    controller: widget.usernameController,
                     ispassword: false,
+                    hintText: 'Full Name',
                     keyboardType: TextInputType.text,
                     suffixIcon: null,
                   ),
-                  const SizedBox(height: 12),
+
+                  const SizedBox(height: 24),
 
                   TextFieldInput(
+                    controller: widget.passwordController,
+                    ispassword: !_passwordVisible,
                     hintText: 'Password',
-                    controller: _passCtrl,
-                    ispassword: true,
                     keyboardType: TextInputType.visiblePassword,
-                    suffixIcon: null,
+                    suffixIcon: IconButton(
+                      alignment: Alignment.bottomLeft,
+                      onPressed: () {
+                        setState(() => _passwordVisible = !_passwordVisible);
+                      },
+                      icon: Icon(
+                        _passwordVisible
+                            ? Icons.visibility
+                            : Icons.visibility_off,
+                        color: red,
+                      ),
+                    ),
                   ),
-                  const SizedBox(height: 12),
+
+                  const SizedBox(height: 24),
 
                   TextFieldInput(
+                    controller: widget.passwordConfirmController,
+                    ispassword: !_passwordVisible,
                     hintText: 'Confirm Password',
-                    controller: _confirmCtrl,
-                    ispassword: true,
                     keyboardType: TextInputType.visiblePassword,
-                    suffixIcon: null,
+                    suffixIcon: IconButton(
+                      alignment: Alignment.bottomLeft,
+                      onPressed: () {
+                        setState(() => _passwordVisible = !_passwordVisible);
+                      },
+                      icon: Icon(
+                        _passwordVisible
+                            ? Icons.visibility
+                            : Icons.visibility_off,
+                        color: red,
+                      ),
+                    ),
                   ),
 
-                  const SizedBox(height: 18),
+                  const SizedBox(height: 28),
 
                   SizedBox(
                     height: 48,
+                    width: double.infinity,
                     child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: red,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        elevation: 2,
+                      style: ButtonStyle(
+                        backgroundColor: WidgetStateProperty.all(red),
                       ),
                       onPressed: () {},
                       child: const Text(
                         'Sign up',
-                        style: TextStyle(fontSize: 16, color: Colors.white),
+                        style: TextStyle(color: Colors.white),
                       ),
                     ),
                   ),
 
                   const SizedBox(height: 18),
-                  const Divider(height: 1),
-                  const SizedBox(height: 18),
-
-                  Wrap(
-                    alignment: WrapAlignment.center,
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    children: [
-                      const Text('Have an account '),
-                      _HoverLink(
-                        text: 'Log in',
-                        onTap: () => Navigator.pop(context),
-                        style: const TextStyle(
-                          color: red,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  const SizedBox(height: 10),
                 ],
               ),
             ),
-          ),
+
+            const Divider(thickness: 2),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text('Have an account? '),
+                  TextButton(
+                    onPressed: () {
+                      // si tu viens du login -> pop()
+                      // Navigator.pop(context);
+
+                      // alternative si tu utilises les routes:
+                      Navigator.pushNamed(context, '/login');
+                    },
+                    child: const Text(
+                      'Log in',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: red,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
-      ),
-    );
-  }
-}
-
-class _HoverLink extends StatefulWidget {
-  final String text;
-  final VoidCallback onTap;
-  final TextStyle style;
-  final TextStyle? hoverStyle;
-
-  const _HoverLink({
-    required this.text,
-    required this.onTap,
-    required this.style,
-    this.hoverStyle,
-  });
-
-  @override
-  State<_HoverLink> createState() => _HoverLinkState();
-}
-
-class _HoverLinkState extends State<_HoverLink> {
-  bool _hover = false;
-
-  @override
-  Widget build(BuildContext context) {
-    final base = widget.style;
-    final hover =
-        widget.hoverStyle ?? base.copyWith(decoration: TextDecoration.underline);
-
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      onEnter: (_) => setState(() => _hover = true),
-      onExit: (_) => setState(() => _hover = false),
-      child: InkWell(
-        onTap: widget.onTap,
-        splashColor: Colors.transparent,
-        hoverColor: Colors.transparent,
-        highlightColor: Colors.transparent,
-        child: Text(widget.text, style: _hover ? hover : base),
       ),
     );
   }
