@@ -422,9 +422,234 @@
 //   }
 // }
 
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-import 'login_screen.dart';
+// import 'login_screen.dart';
+
+// class UploadImageScreen extends StatelessWidget {
+//   const UploadImageScreen({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     const red = Color(0xFFD94335);
+
+//     return Scaffold(
+//       backgroundColor: Colors.white,
+//       body: SafeArea(
+//         child: Center(
+//           child: SingleChildScrollView(
+//             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+//             child: ConstrainedBox(
+//               constraints: const BoxConstraints(maxWidth: 420),
+//               child: Column(
+//                 crossAxisAlignment: CrossAxisAlignment.stretch,
+//                 children: [
+//                   Row(
+//                     mainAxisAlignment: MainAxisAlignment.end,
+//                     children: [
+//                       const Text(
+//                         'Have an account? ',
+//                         style: TextStyle(fontSize: 13, color: Colors.black),
+//                       ),
+//                       _HoverLink(
+//                         text: 'Log in',
+//                         onTap: () {
+//                           Navigator.push(
+//                             context,
+//                             MaterialPageRoute(
+//                               builder: (_) => const LoginScreen(),
+//                             ),
+//                           );
+//                         },
+//                         style: const TextStyle(
+//                           fontSize: 13,
+//                           color: red,
+//                           fontWeight: FontWeight.w600,
+//                         ),
+//                         hoverStyle: const TextStyle(
+//                           fontSize: 13,
+//                           color: red,
+//                           fontWeight: FontWeight.w600,
+//                           decoration: TextDecoration.underline,
+//                         ),
+//                       ),
+//                     ],
+//                   ),
+
+//                   const SizedBox(height: 18),
+
+//                   const Text(
+//                     'Holbegram',
+//                     textAlign: TextAlign.center,
+//                     style: TextStyle(
+//                       fontFamily: 'Billabong',
+//                       fontSize: 56,
+//                       height: 1,
+//                       color: Colors.black,
+//                     ),
+//                   ),
+
+//                   const SizedBox(height: 6),
+
+//                   Center(
+//                     child: Image.asset(
+//                       'assets/images/seahorse.png',
+//                       height: 44,
+//                       fit: BoxFit.contain,
+//                     ),
+//                   ),
+
+//                   const SizedBox(height: 22),
+
+//                   const Text(
+//                     'Hello, John Doe Welcome to\nHolbegram.',
+//                     textAlign: TextAlign.center,
+//                     style: TextStyle(
+//                       fontSize: 18,
+//                       fontWeight: FontWeight.w700,
+//                       color: Colors.black,
+//                       height: 1.25,
+//                     ),
+//                   ),
+
+//                   const SizedBox(height: 10),
+
+//                   Text(
+//                     'Choose an image from your gallery or take a new one.',
+//                     textAlign: TextAlign.center,
+//                     style: TextStyle(
+//                       fontSize: 13.5,
+//                       color: Colors.black.withOpacity(0.65),
+//                       height: 1.3,
+//                     ),
+//                   ),
+
+//                   const SizedBox(height: 26),
+
+//                   Center(
+//                     child: Icon(
+//                       Icons.account_circle_outlined,
+//                       size: 140,
+//                       color: Colors.black.withOpacity(0.9),
+//                     ),
+//                   ),
+
+//                   const SizedBox(height: 22),
+
+//                   Wrap(
+//                     alignment: WrapAlignment.center,
+//                     spacing: 36,
+//                     runSpacing: 16,
+//                     children: const [
+//                       _IconSquareButton(icon: Icons.image_outlined),
+//                       _IconSquareButton(icon: Icons.photo_camera_outlined),
+//                     ],
+//                   ),
+
+//                   const SizedBox(height: 26),
+
+//                   Center(
+//                     child: SizedBox(
+//                       width: 170,
+//                       height: 46,
+//                       child: ElevatedButton(
+//                         style: ElevatedButton.styleFrom(
+//                           backgroundColor: red,
+//                           foregroundColor: Colors.white,
+//                           shape: RoundedRectangleBorder(
+//                             borderRadius: BorderRadius.circular(6),
+//                           ),
+//                           elevation: 0,
+//                         ),
+//                         onPressed: () {},
+//                         child: const Text(
+//                           'Next',
+//                           style: TextStyle(
+//                             fontSize: 18,
+//                             fontWeight: FontWeight.w700,
+//                           ),
+//                         ),
+//                       ),
+//                     ),
+//                   ),
+//                 ],
+//               ),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class _IconSquareButton extends StatelessWidget {
+//   final IconData icon;
+
+//   const _IconSquareButton({required this.icon});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     const red = Color(0xFFD94335);
+
+//     return InkWell(
+//       borderRadius: BorderRadius.circular(8),
+//       onTap: () {},
+//       child: Container(
+//         width: 48,
+//         height: 48,
+//         decoration: BoxDecoration(
+//           border: Border.all(color: red, width: 2),
+//           borderRadius: BorderRadius.circular(8),
+//           color: Colors.white,
+//         ),
+//         child: Icon(icon, color: red, size: 26),
+//       ),
+//     );
+//   }
+// }
+
+// class _HoverLink extends StatefulWidget {
+//   final String text;
+//   final VoidCallback onTap;
+//   final TextStyle style;
+//   final TextStyle? hoverStyle;
+
+//   const _HoverLink({
+//     required this.text,
+//     required this.onTap,
+//     required this.style,
+//     this.hoverStyle,
+//   });
+
+//   @override
+//   State<_HoverLink> createState() => _HoverLinkState();
+// }
+
+// class _HoverLinkState extends State<_HoverLink> {
+//   bool _hover = false;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     final base = widget.style;
+//     final hover =
+//         widget.hoverStyle ?? base.copyWith(decoration: TextDecoration.underline);
+
+//     return MouseRegion(
+//       cursor: SystemMouseCursors.click,
+//       onEnter: (_) => setState(() => _hover = true),
+//       onExit: (_) => setState(() => _hover = false),
+//       child: InkWell(
+//         onTap: widget.onTap,
+//         splashColor: Colors.transparent,
+//         hoverColor: Colors.transparent,
+//         highlightColor: Colors.transparent,
+//         child: Text(widget.text, style: _hover ? hover : base),
+//       ),
+//     );
+//   }
+// }
+
+import 'package:flutter/material.dart';
 
 class UploadImageScreen extends StatelessWidget {
   const UploadImageScreen({super.key});
@@ -444,6 +669,7 @@ class UploadImageScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  // Have an account? Log in (top right)
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
@@ -453,14 +679,7 @@ class UploadImageScreen extends StatelessWidget {
                       ),
                       _HoverLink(
                         text: 'Log in',
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => const LoginScreen(),
-                            ),
-                          );
-                        },
+                        onTap: () => Navigator.pushNamed(context, '/login'),
                         style: const TextStyle(
                           fontSize: 13,
                           color: red,
@@ -540,9 +759,15 @@ class UploadImageScreen extends StatelessWidget {
                     alignment: WrapAlignment.center,
                     spacing: 36,
                     runSpacing: 16,
-                    children: const [
-                      _IconSquareButton(icon: Icons.image_outlined),
-                      _IconSquareButton(icon: Icons.photo_camera_outlined),
+                    children: [
+                      _IconSquareButton(
+                        icon: Icons.image_outlined,
+                        onTap: () {},
+                      ),
+                      _IconSquareButton(
+                        icon: Icons.photo_camera_outlined,
+                        onTap: () {},
+                      ),
                     ],
                   ),
 
@@ -584,8 +809,12 @@ class UploadImageScreen extends StatelessWidget {
 
 class _IconSquareButton extends StatelessWidget {
   final IconData icon;
+  final VoidCallback onTap;
 
-  const _IconSquareButton({required this.icon});
+  const _IconSquareButton({
+    required this.icon,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -593,7 +822,7 @@ class _IconSquareButton extends StatelessWidget {
 
     return InkWell(
       borderRadius: BorderRadius.circular(8),
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         width: 48,
         height: 48,
