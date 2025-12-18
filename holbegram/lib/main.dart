@@ -139,6 +139,12 @@ import 'screens/login_screen.dart';
 import 'screens/signup_screen.dart';
 import 'screens/upload_image_screen.dart';
 
+import 'package:provider/provider.dart';
+
+import 'providers/user_provider.dart';
+import 'screens/home.dart';
+
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -146,11 +152,22 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
+  // runApp(
+  //   DevicePreview(
+  //     enabled: !kReleaseMode,
+  //     // builder: (context) => const MyApp(),
+  //     builder: (context) => MyApp(), // ✅ pas const
+  //   ),
+  // );
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,
-      // builder: (context) => const MyApp(),
-      builder: (context) => MyApp(), // ✅ pas const
+      builder: (context) => MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => UserProvider()),
+        ],
+        child: const MyApp(),
+      ),
     ),
   );
 }
@@ -228,6 +245,7 @@ class _MyAppState extends State<MyApp> {
               password: _passwordController.text,
               username: 'John Doe',
             ),
+        '/home': (_) => const Home(),
       },
       // },
     );

@@ -1329,6 +1329,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'signup_screen.dart';
 import '../methods/auth_methods.dart';
 
+import 'package:provider/provider.dart';
+import '../providers/user_provider.dart';
+
+
 
 
 class LoginScreen extends StatefulWidget {
@@ -1457,6 +1461,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             const SnackBar(content: Text('success')),
                           );
 
+
+                          await Provider.of<UserProvider>(context, listen: false).refreshUser();
+
+                          if (!mounted) return;
+                          Navigator.pushReplacementNamed(context, '/home');
                           // TODO: quand tu auras un HomeScreen / route '/home'
                           // Navigator.pushReplacementNamed(context, '/home');
                         } else {
