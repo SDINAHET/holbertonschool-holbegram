@@ -149,7 +149,8 @@ Future<void> main() async {
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,
-      builder: (context) => const MyApp(),
+      // builder: (context) => const MyApp(),
+      builder: (context) => MyApp(), // ✅ pas const
     ),
   );
 }
@@ -188,25 +189,47 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(useMaterial3: true),
 
       initialRoute: '/login',
+      // routes: {
+      //   // '/login': (_) => LoginScreen(
+      //   //       emailController: _emailController,
+      //   //       passwordController: _passwordController,
+      //   //       passwordVisible: true, // ✅ default true comme consigne
+      //   //     ),
+      //   '/login': (_) => LoginScreen(
+      //     emailController: TextEditingController(),
+      //     passwordController: TextEditingController(),
+      //   ),
+      //   // '/signup': (_) => const SignupScreen(),
+      //   '/signup': (_) => SignUp(
+      //     emailController: TextEditingController(),
+      //     usernameController: TextEditingController(),
+      //     passwordController: TextEditingController(),
+      //     passwordConfirmController: TextEditingController(),
+      //   ),
+      //   // '/upload': (_) => const UploadImageScreen(),
+      //   '/upload': (_) => AddPicture(
+      //     email: _emailController.text,
+      //     password: _passwordController.text,
+      //     username: 'John Doe',
+      //   ),
       routes: {
-        // '/login': (_) => LoginScreen(
-        //       emailController: _emailController,
-        //       passwordController: _passwordController,
-        //       passwordVisible: true, // ✅ default true comme consigne
-        //     ),
         '/login': (_) => LoginScreen(
-          emailController: TextEditingController(),
-          passwordController: TextEditingController(),
-        ),
-        // '/signup': (_) => const SignupScreen(),
+              emailController: _emailController,
+              passwordController: _passwordController,
+            ),
         '/signup': (_) => SignUp(
-          emailController: TextEditingController(),
-          usernameController: TextEditingController(),
-          passwordController: TextEditingController(),
-          passwordConfirmController: TextEditingController(),
-        ),
-        '/upload': (_) => const UploadImageScreen(),
+              emailController: _emailController,
+              usernameController: TextEditingController(), // tu peux aussi le garder en state si besoin
+              passwordController: _passwordController,
+              passwordConfirmController: TextEditingController(),
+            ),
+        '/upload': (_) => AddPicture(
+              email: _emailController.text,
+              password: _passwordController.text,
+              username: 'John Doe',
+            ),
       },
+      // },
     );
   }
 }

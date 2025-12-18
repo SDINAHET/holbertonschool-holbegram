@@ -656,6 +656,8 @@
 import 'package:flutter/material.dart';
 import '../widgets/text_field.dart';
 import 'login_screen.dart';
+import 'upload_image_screen.dart';
+
 
 class SignUp extends StatefulWidget {
   final TextEditingController emailController;
@@ -807,7 +809,39 @@ class _SignUpState extends State<SignUp> {
                       style: ButtonStyle(
                         backgroundColor: WidgetStateProperty.all(red),
                       ),
-                      onPressed: () {},
+                      // onPressed: () {},
+                    onPressed: () async {
+                      final email = widget.emailController.text.trim();
+                      final username = widget.usernameController.text.trim();
+                      final password = widget.passwordController.text.trim();
+                      final confirm = widget.passwordConfirmController.text.trim();
+
+                      if (email.isEmpty || username.isEmpty || password.isEmpty || confirm.isEmpty) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Please fill in all fields.')),
+                        );
+                        return;
+                      }
+
+                      if (password != confirm) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Passwords do not match.')),
+                        );
+                        return;
+                      }
+
+                      // ✅ Task 7: aller sur l'écran AddPicture pour choisir l'image
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => AddPicture(
+                            email: email,
+                            password: password,
+                            username: username,
+                          ),
+                        ),
+                      );
+                    },
                       child: const Text(
                         'Sign up',
                         style: TextStyle(color: Colors.white),
