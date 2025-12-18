@@ -883,6 +883,8 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import '../methods/auth_methods.dart';
+
 
 class AddPicture extends StatefulWidget {
   final String email;
@@ -1073,7 +1075,115 @@ class _AddPictureState extends State<AddPicture> {
 
                   const SizedBox(height: 26),
 
-                  // Next button
+                  // // Next button
+                  // Center(
+                  //   child: SizedBox(
+                  //     width: 120,
+                  //     height: 42,
+                  //     child: ElevatedButton(
+                  //       style: ElevatedButton.styleFrom(
+                  //         backgroundColor: red,
+                  //         foregroundColor: Colors.white,
+                  //         shape: RoundedRectangleBorder(
+                  //           borderRadius: BorderRadius.circular(4),
+                  //         ),
+                  //         elevation: 0,
+                  //       ),
+                  //     //   onPressed: () {
+                  //     //     if (_image == null) {
+                  //     //       ScaffoldMessenger.of(context).showSnackBar(
+                  //     //         const SnackBar(
+                  //     //           content: Text('Please select an image first.'),
+                  //     //         ),
+                  //     //       );
+                  //     //       return;
+                  //     //     }
+
+                  //     //     // ✅ Task 7: image is selected and ready
+                  //     //     // If you want, next step is to upload it to Cloudinary
+                  //     //     // using StorageMethods (you’ll do it in signup flow).
+                  //     //     //
+                  //     //     // Example (later):
+                  //     //     // final url = await StorageMethods()
+                  //     //     //     .uploadImageToStorage(false, 'profilePics', _image!);
+
+                  //     //     Navigator.pushNamed(context, '/home'); // or next step
+                  //     //   },
+                  //     //   child: const Text(
+                  //     //     'Next',
+                  //     //     style: TextStyle(
+                  //     //       fontSize: 18,
+                  //     //       fontWeight: FontWeight.w700,
+                  //     //     ),
+                  //     //   ),
+                  //     // ),
+                  //     onPressed: () async {
+                  //       if (_image == null) {
+                  //         ScaffoldMessenger.of(context).showSnackBar(
+                  //           const SnackBar(
+                  //             content: Text('Please select an image first.'),
+                  //           ),
+                  //         );
+                  //         return;
+                  //       }
+
+                  //       final res = await AuthMethode().signUpUser(
+                  //         email: widget.email,
+                  //         username: widget.username,
+                  //         password: widget.password,
+                  //         file: _image!,
+                  //       );
+
+                  //       if (res == 'success') {
+                  //         ScaffoldMessenger.of(context).showSnackBar(
+                  //           const SnackBar(content: Text('success')),
+                  //         );
+                  //         Navigator.pushReplacementNamed(context, '/home');
+                  //       } else {
+                  //         ScaffoldMessenger.of(context).showSnackBar(
+                  //           SnackBar(content: Text(res)),
+                  //         );
+                  //       }
+                  //     },
+                  //   ),
+                  // ),
+                // Next button
+                  // Center(
+                  //   child: SizedBox(
+                  //     width: 200,
+                  //     height: 200,
+                  //     child: _image == null
+                  //         ? Image.asset(
+                  //             'assets/icons/Sample_User_Icon.png',
+                  //             fit: BoxFit.contain,
+                  //           )
+                  //         : ClipOval(
+                  //             child: Image.memory(
+                  //               _image!,
+                  //               fit: BoxFit.cover,
+                  //             ),
+                  //           ),
+                  //   ),
+                  // ),
+                  // const SizedBox(height: 22),
+
+                  // Wrap(
+                  //   alignment: WrapAlignment.center,
+                  //   spacing: 36,
+                  //   runSpacing: 16,
+                  //   children: [
+                  //     _IconSquareButton(
+                  //       icon: Icons.image_outlined,
+                  //       onTap: selectImageFromGallery,
+                  //     ),
+                  //     _IconSquareButton(
+                  //       icon: Icons.photo_camera_outlined,
+                  //       onTap: selectImageFromCamera,
+                  //     ),
+                  //   ],
+                  // ),
+                  // const SizedBox(height: 26),
+
                   Center(
                     child: SizedBox(
                       width: 120,
@@ -1087,7 +1197,7 @@ class _AddPictureState extends State<AddPicture> {
                           ),
                           elevation: 0,
                         ),
-                        onPressed: () {
+                        onPressed: () async {
                           if (_image == null) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
@@ -1097,15 +1207,24 @@ class _AddPictureState extends State<AddPicture> {
                             return;
                           }
 
-                          // ✅ Task 7: image is selected and ready
-                          // If you want, next step is to upload it to Cloudinary
-                          // using StorageMethods (you’ll do it in signup flow).
-                          //
-                          // Example (later):
-                          // final url = await StorageMethods()
-                          //     .uploadImageToStorage(false, 'profilePics', _image!);
+                          // ✅ Task 8: Call signUpUser with correct data
+                          final res = await AuthMethode().signUpUser(
+                            email: widget.email,
+                            username: widget.username,
+                            password: widget.password,
+                            file: _image!,
+                          );
 
-                          Navigator.pushNamed(context, '/home'); // or next step
+                          if (res == 'success') {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(content: Text('success')),
+                            );
+                            Navigator.pushReplacementNamed(context, '/home');
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text(res)),
+                            );
+                          }
                         },
                         child: const Text(
                           'Next',

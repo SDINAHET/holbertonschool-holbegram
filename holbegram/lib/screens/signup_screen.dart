@@ -802,15 +802,72 @@ class _SignUpState extends State<SignUp> {
 
                   const SizedBox(height: 28),
 
-                  SizedBox(
-                    height: 48,
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        backgroundColor: WidgetStateProperty.all(red),
-                      ),
-                      // onPressed: () {},
-                    onPressed: () async {
+                  // SizedBox(
+                  //   height: 48,
+                  //   width: double.infinity,
+                  //   child: ElevatedButton(
+                  //     style: ButtonStyle(
+                  //       backgroundColor: WidgetStateProperty.all(red),
+                  //     ),
+                  //     // onPressed: () {},
+                  // //   onPressed: () async {
+                  // //     final email = widget.emailController.text.trim();
+                  // //     final username = widget.usernameController.text.trim();
+                  // //     final password = widget.passwordController.text.trim();
+                  // //     final confirm = widget.passwordConfirmController.text.trim();
+
+                  // //     if (email.isEmpty || username.isEmpty || password.isEmpty || confirm.isEmpty) {
+                  // //       ScaffoldMessenger.of(context).showSnackBar(
+                  // //         const SnackBar(content: Text('Please fill in all fields.')),
+                  // //       );
+                  // //       return;
+                  // //     }
+
+                  // //     if (password != confirm) {
+                  // //       ScaffoldMessenger.of(context).showSnackBar(
+                  // //         const SnackBar(content: Text('Passwords do not match.')),
+                  // //       );
+                  // //       return;
+                  // //     }
+
+                  // //     // ✅ Task 7: aller sur l'écran AddPicture pour choisir l'image
+                  // //     Navigator.push(
+                  // //       context,
+                  // //       MaterialPageRoute(
+                  // //         builder: (_) => AddPicture(
+                  // //           email: email,
+                  // //           password: password,
+                  // //           username: username,
+                  // //         ),
+                  // //       ),
+                  // //     );
+                  // //   },
+                  // //     child: const Text(
+                  // //       'Sign up',
+                  // //       style: TextStyle(color: Colors.white),
+                  // //     ),
+                  // //   ),
+                  // // ),
+                  // onPressed: () {
+                  //   Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //       builder: (context) => AddPicture(
+                  //         email: _emailController.text.trim(),
+                  //         username: _usernameController.text.trim(),
+                  //         password: _passwordController.text.trim(),
+                  //       ),
+                  //     ),
+                  //   );
+                  // },
+                SizedBox(
+                  height: 48,
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: WidgetStateProperty.all(red),
+                    ),
+                    onPressed: () {
                       final email = widget.emailController.text.trim();
                       final username = widget.usernameController.text.trim();
                       final password = widget.passwordController.text.trim();
@@ -830,24 +887,24 @@ class _SignUpState extends State<SignUp> {
                         return;
                       }
 
-                      // ✅ Task 7: aller sur l'écran AddPicture pour choisir l'image
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => AddPicture(
+                          builder: (context) => AddPicture(
                             email: email,
-                            password: password,
                             username: username,
+                            password: password,
                           ),
                         ),
                       );
                     },
-                      child: const Text(
-                        'Sign up',
-                        style: TextStyle(color: Colors.white),
-                      ),
+                    child: const Text(
+                      'Sign up',
+                      style: TextStyle(color: Colors.white),
                     ),
                   ),
+                ),
+
 
                   const SizedBox(height: 18),
                 ],
