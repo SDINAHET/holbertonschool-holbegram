@@ -1327,6 +1327,8 @@ import 'package:flutter/material.dart';
 import '../widgets/text_field.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'signup_screen.dart';
+import '../methods/auth_methods.dart';
+
 
 
 class LoginScreen extends StatefulWidget {
@@ -1441,7 +1443,28 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: ButtonStyle(
                         backgroundColor: WidgetStateProperty.all(red),
                       ),
-                      onPressed: () {},
+                      // onPressed: () {},
+                      onPressed: () async {
+                        final email = widget.emailController.text.trim();
+                        final password = widget.passwordController.text.trim();
+
+                        final res = await AuthMethode().login(email: email, password: password);
+
+                        if (!mounted) return;
+
+                        if (res == 'success') {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('success')),
+                          );
+
+                          // TODO: quand tu auras un HomeScreen / route '/home'
+                          // Navigator.pushReplacementNamed(context, '/home');
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text(res)),
+                          );
+                        }
+                      },
                       child: const Text(
                         'Log in',
                         style: TextStyle(color: Colors.white),
