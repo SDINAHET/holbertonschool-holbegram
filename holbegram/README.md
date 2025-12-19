@@ -592,4 +592,6 @@ https://console.cloudinary.com/app/c-be4b37261cf94c8b0df6610104cab2/settings/api
 
 Running Gradle task 'assembleRelease'...                          301,3s
 √ Built build\app\outputs\flutter-apk\app-release.apk (52.2MB)
-PS D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram> 
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram>
+
+

@@ -54,6 +54,7 @@ flutter:
     - assets/icons/google.svg
     - assets/icons/Sample_User_Icon.png
     - assets/icons/chat_square_lines.svg
+    - assets/icons/add.webp
 
   fonts:
     - family: Billabong
