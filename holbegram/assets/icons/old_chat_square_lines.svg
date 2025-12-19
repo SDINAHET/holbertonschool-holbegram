@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <!-- bubble -->
+  <path d="M6 7.5C6 6.67157 6.67157 6 7.5 6H19.5C20.3284 6 21 6.67157 21 7.5V15.5C21 16.3284 20.3284 17 19.5 17H11L7 21V17H7.5C6.67157 17 6 16.3284 6 15.5V7.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+  <!-- lines -->
+  <path d="M9 10H18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+  <path d="M9 12.75H18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+  <path d="M9 15.5H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+</svg>

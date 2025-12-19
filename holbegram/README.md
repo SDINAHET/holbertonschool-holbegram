@@ -453,3 +453,143 @@ PS D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram>
 ![alt text](image-6.png)
 ![alt text](image-7.png)
 ![alt text](image-5.png)
+
+
+flutter pub add bottom_navy_bar
+
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram> flutter pub add bottom_navy_bar
+"bottom_navy_bar" is already in "dependencies". Will try to update the constraint.
+Resolving dependencies...
+Downloading packages...
+  _flutterfire_internals 1.3.59 (1.3.65 available)
+  characters 1.4.0 (1.4.1 available)
+  cloud_firestore 5.6.12 (6.1.1 available)
+  cloud_firestore_platform_interface 6.6.12 (7.0.5 available)
+  cloud_firestore_web 4.4.12 (5.1.1 available)
+  firebase_auth 5.7.0 (6.1.3 available)
+  firebase_auth_platform_interface 7.7.3 (8.1.5 available)
+  firebase_auth_web 5.15.3 (6.1.1 available)
+  firebase_core 3.15.2 (4.3.0 available)
+  firebase_core_web 2.24.1 (3.3.1 available)
+  firebase_database 11.3.10 (12.1.1 available)
+  firebase_database_platform_interface 0.2.6+10 (0.3.0+1 available)
+  firebase_database_web 0.2.6+16 (0.2.7+2 available)
+  flutter_lints 5.0.0 (6.0.0 available)
+  lints 5.1.1 (6.0.0 available)
+  matcher 0.12.17 (0.12.18 available)
+  material_color_utilities 0.11.1 (0.13.0 available)
+  test_api 0.7.7 (0.7.8 available)
+  video_player_android 2.8.22 (2.9.0 available)
+Got dependencies!
+19 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram>
+
+
+D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram
+
+
+
+
+
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram> flutterfire configure
+? You have an existing `firebase.json` file and possibly already configured your project for Firebase. Would you prefer to reuse th✔ You have an existing `firebase.json` file and possibly already configured your project for Firebase. Would you prefer to reuse the values in your existing `firebase.json` file to configure your project? · yes
+FirebaseCommandException: An error occured on the Firebase CLI when attempting to run a command.
+COMMAND: firebase apps:sdkconfig web 1:944305260432:web:d5cb165e65b53fcc855515 --json
+ERROR: Failed to get WEB app configuration. See firebase-debug.log for more info.
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram> flutterfire configure --platforms=android
+i Found 1 Firebase projects.
+✔ Select a Firebase project to configure your Flutter application with · holbegram-e67ca (Holbegram)
+i Selected platforms: android
+? Generated FirebaseOptions file D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram\lib\firebase_options.dart already? Generated FirebaseOptions file D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram\lib\firebase_options.dart already✔ Generated FirebaseOptions file D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram\lib\firebase_options.dart already exists, do you want to override it? · yes
+i Firebase android app com.example.holbegram registered.
+
+Firebase configuration file lib\firebase_options.dart generated successfully with the following Firebase apps:
+
+Platform  Firebase App Id
+android   1:944305260432:android:ef5b062a729aa248855515
+
+Learn more about using this file and next steps from the documentation:
+ > https://firebase.google.com/docs/flutter/setup
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram>
+
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram> flutterfire configure --platforms=android
+i Found 1 Firebase projects.
+✔ Select a Firebase project to configure your Flutter application with · holbegram-e67ca (Holbegram)
+i Selected platforms: android
+? Generated FirebaseOptions file D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram\lib\firebase_options.dart already? Generated FirebaseOptions file D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram\lib\firebase_options.dart already✔ Generated FirebaseOptions file D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram\lib\firebase_options.dart already exists, do you want to override it? · yes
+i Firebase android app com.example.holbegram registered.
+
+Firebase configuration file lib\firebase_options.dart generated successfully with the following Firebase apps:
+
+Platform  Firebase App Id
+android   1:944305260432:android:ef5b062a729aa248855515
+
+Learn more about using this file and next steps from the documentation:
+ > https://firebase.google.com/docs/flutter/setup
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram>
+
+![alt text](image-8.png)
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram> npm install -g firebase-tools
+npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+
+changed 742 packages in 49s
+
+89 packages are looking for funding
+  run `npm fund` for details
+npm notice
+npm notice New major version of npm available! 10.9.2 -> 11.7.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.7.0
+npm notice To update run: npm install -g npm@11.7.0
+npm notice
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram>
+
+
+![alt text](image-9.png)
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram> firebase login
+Already logged in as 9546@holbertonstudents.com
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram> firebase init
+
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+✔ Are you ready to proceed? Yes
+? Which Firebase features do you want to set up for this directory? Press Space to select features, then Enter to confirm your
+choices.
+❯◯ Data Connect: Set up a Firebase Data Connect service
+ ◯ Firestore: Configure security rules and indexes files for Firestore
+ ◯ Genkit: Setup a new Genkit project with Firebase
+ ◯ Functions: Configure a Cloud Functions directory and its files
+ ◯ App Hosting: Set up deployments for full-stack web apps (supports server-side rendering)
+ ◯ Hosting: Set up deployments for static web apps
+ ◯ Storage: Configure a security rules file for Cloud Storage
+
+↑↓ navigate • space select • a all • i invert • ⏎ submit
+
+
+![alt text](image-10.png)
+
+https://cloudinary.com/documentation/dart_quick_start
+https://console.cloudinary.com/app/c-be4b37261cf94c8b0df6610104cab2/settings/api-keys
+
+
+![alt text](image-11.png)
+
+
+                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
+                        ... 24 more
+
+Running Gradle task 'assembleRelease'...                          301,3s
+√ Built build\app\outputs\flutter-apk\app-release.apk (52.2MB)
+PS D:\Users\steph\Documents\dev\holbertonschool-holbegram\holbegram> 

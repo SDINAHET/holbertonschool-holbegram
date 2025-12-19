@@ -691,14 +691,14 @@ class _SignUpState extends State<SignUp> {
     _confirmPasswordVisible = widget._passwordVisible;
   }
 
-  @override
-  void dispose() {
-    widget.emailController.dispose();
-    widget.usernameController.dispose();
-    widget.passwordController.dispose();
-    widget.passwordConfirmController.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   widget.emailController.dispose();
+  //   widget.usernameController.dispose();
+  //   widget.passwordController.dispose();
+  //   widget.passwordConfirmController.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {

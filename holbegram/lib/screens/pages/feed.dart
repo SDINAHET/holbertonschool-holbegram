@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../utils/posts.dart';
+import 'add_image.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Feed extends StatelessWidget {
   const Feed({super.key});
@@ -29,10 +31,28 @@ class Feed extends StatelessWidget {
             const Spacer(),
             IconButton(
               icon: const Icon(Icons.add, color: Colors.black),
-              onPressed: () {},
+              // onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AddImage(),
+                  ),
+                );
+              },
             ),
+            // IconButton(
+            //   // icon: const Icon(Icons.chat_bubble_outline, color: Colors.black),
+            //   icon: const Icon(Icons.forum_outlined, color: Colors.black),
+            //   onPressed: () {},
+            // ),
             IconButton(
-              icon: const Icon(Icons.chat_bubble_outline, color: Colors.black),
+              icon: SvgPicture.asset(
+                'assets/icons/chat_square_lines.svg',
+                width: 24,
+                height: 24,
+                colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn),
+              ),
               onPressed: () {},
             ),
             const SizedBox(width: 6),

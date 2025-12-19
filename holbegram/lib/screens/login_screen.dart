@@ -1575,19 +1575,51 @@ class _LoginScreenState extends State<LoginScreen> {
                   //     const Text('Sign in with Google'),
                   //   ],
                   // ),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        'assets/icons/google.svg',
-                        width: 40,
-                        height: 40,
-                      ),
-                      const SizedBox(width: 10),
-                      const Text('Sign in with Google'),
-                    ],
+                  // Row(
+                  //   mainAxisSize: MainAxisSize.min,
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                  //     SvgPicture.asset(
+                  //       'assets/icons/google.svg',
+                  //       width: 40,
+                  //       height: 40,
+                  //     ),
+                  //     const SizedBox(width: 10),
+                  //     const Text('Sign in with Google'),
+                  //   ],
+                  // ),
+                  InkWell(
+                    onTap: () async {
+                      final res = await AuthMethode().signInWithGoogle();
+
+                      if (!mounted) return;
+
+                      if (res == "success") {
+                        await Provider.of<UserProvider>(context, listen: false).refreshUser();
+                        if (!mounted) return;
+
+                        Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
+                      } else if (res != "cancelled") {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(res)),
+                        );
+                      }
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          'assets/icons/google.svg',
+                          width: 40,
+                          height: 40,
+                        ),
+                        const SizedBox(width: 10),
+                        const Text('Sign in with Google'),
+                      ],
+                    ),
                   ),
+
                 ],
               ),
             ),

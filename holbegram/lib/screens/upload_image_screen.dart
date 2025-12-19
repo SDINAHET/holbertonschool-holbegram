@@ -1219,7 +1219,8 @@ class _AddPictureState extends State<AddPicture> {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(content: Text('success')),
                             );
-                            Navigator.pushReplacementNamed(context, '/home');
+                            // Navigator.pushReplacementNamed(context, '/home');
+                            Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
                           } else {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text(res)),

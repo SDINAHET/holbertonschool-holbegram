@@ -53,6 +53,8 @@ class DefaultFirebaseOptions {
     projectId: 'holbegram-e67ca',
     authDomain: 'holbegram-e67ca.firebaseapp.com',
     storageBucket: 'holbegram-e67ca.firebasestorage.app',
+    // storageBucket: 'holbegram-e67ca.appspot.com',
+
   );
 
   static const FirebaseOptions android = FirebaseOptions(
@@ -61,6 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '944305260432',
     projectId: 'holbegram-e67ca',
     storageBucket: 'holbegram-e67ca.firebasestorage.app',
+    // storageBucket: 'holbegram-e67ca.appspot.com',
+
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
@@ -70,6 +74,8 @@ class DefaultFirebaseOptions {
     projectId: 'holbegram-e67ca',
     authDomain: 'holbegram-e67ca.firebaseapp.com',
     storageBucket: 'holbegram-e67ca.firebasestorage.app',
+    // storageBucket: 'holbegram-e67ca.appspot.com',
+
   );
 
 }
