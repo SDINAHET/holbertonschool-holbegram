@@ -34,7 +34,8 @@ class PostStorage {
         "username": username,
         "likes": [],
         "postId": postId,
-        "datePublished": Timestamp.now(),
+        // "datePublished": Timestamp.now(),
+		"datePublished": FieldValue.serverTimestamp(),
         "postUrl": postUrl,
         "profImage": profImage,
         "publicId": publicId, // ✅ nécessaire pour deletePost

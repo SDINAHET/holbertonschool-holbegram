@@ -1277,8 +1277,8 @@ class _AddImageState extends State<AddImage> {
       setState(() => _imageBytes = null);
       _captionController.clear();
 
-      // Retour Home
-      Navigator.pop(context);
+    //   // Retour Home
+    //   Navigator.pop(context);
     } catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(

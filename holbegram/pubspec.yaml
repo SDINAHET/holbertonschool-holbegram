@@ -7,6 +7,14 @@ version: 1.0.0+1
 environment:
   sdk: ">=3.0.0 <4.0.0"
 
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "assets/app_icon.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/app_icon.png"
+
 dependencies:
   flutter:
     sdk: flutter
@@ -39,6 +47,9 @@ dependencies:
 
   google_sign_in: ^7.2.0
 
+  flutter_staggered_grid_view: ^0.7.0
+  flutter_launcher_icons: ^0.13.1
+
 
 dev_dependencies:
   flutter_test:
@@ -55,6 +66,8 @@ flutter:
     - assets/icons/Sample_User_Icon.png
     - assets/icons/chat_square_lines.svg
     - assets/icons/add.webp
+    - assets/app_icon.png
+
 
   fonts:
     - family: Billabong
